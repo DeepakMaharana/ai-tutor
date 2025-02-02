@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+// const apiUrl = import.meta.env.VITE_API_URL;
 
 // Create an axios instance
 const api = axios.create({
-  baseURL: apiUrl, // Your API base URL
+  baseURL: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBDmtXhE2jvbJ1VsYFAzt077tAMOoz57fI", // Your API base URL
   timeout: 10000, // Optional: Set a timeout limit
   headers: {
     'Content-Type': 'application/json',

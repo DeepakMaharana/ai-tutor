@@ -8,13 +8,13 @@ import {
   PenTool,
 } from "lucide-react";
 import prompt_data from "../utils/prompts";
-import { useFetch } from "../hooks/useApi";
+import { useFetch, usePost } from "../hooks/useApi";
 
 // Sample topics data - in a real app, this would come from a backend
 const topics = prompt_data["topics"];
 
 const LearningWindow = () => {
-    const {loading, error, fetchData} = useFetch();
+  const { loading, error, postData } = usePost();
   const [currentTopic, setCurrentTopic] = useState(0);
   const [unlockedTopics, setUnlockedTopics] = useState([0]);
   const [reflection, setReflection] = useState("");
@@ -41,12 +41,17 @@ const LearningWindow = () => {
     if (unlockedTopics.includes(index)) {
       setCurrentTopic(index);
       setShowReflection(false);
+      let url ="";
+      let data = {
+        contents: [{ parts: [{ text: topics.ai_prompt }] }],
+      };
+      const response = postData(url, data);
+
+      console.log(response);
     }
   };
 
-  useLayoutEffect(()=>{
-
-  },[])
+  useLayoutEffect(() => {handleTopicClick(0)}, []);
 
   return (
     <div className="min-h-screen p-4 md:p-8">
@@ -91,11 +96,17 @@ const LearningWindow = () => {
 
               {!showReflection ? (
                 <div className="flex-grow">
-                  <p className="text-lg mb-6">{topics[currentTopic].content}</p>
+                  <p className="text-lg mb-6">
+                    {loading && "Generating Data"}
+
+                    {error &&
+                      "Something went wrong! error while generating response"}
+                    {topics[currentTopic].content &&
+                      topics[currentTopic].content}
+                  </p>
                   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 mb-6">
                     <p className="text-yellow-800 font-medium">
-                      {topics[currentTopic].fun_fact
-                      }
+                      {topics[currentTopic].fun_fact}
                     </p>
                   </div>
                 </div>
@@ -109,23 +120,43 @@ const LearningWindow = () => {
                         </p>
 
                         <p className="flex justify-start items-center gap-3 bg-white text-gray-700 p-2 rounded-md cursor-pointer">
-                            <input type="radio" name={"question"+index} id="" className="cursor-pointer" />
-                            {item.options[0]}
+                          <input
+                            type="radio"
+                            name={"question" + index}
+                            id=""
+                            className="cursor-pointer"
+                          />
+                          {item.options[0]}
                         </p>
 
                         <p className="flex justify-start items-center gap-3 bg-white text-gray-700 p-2 rounded-md cursor-pointer">
-                            <input type="radio" name={"question"+index} className="cursor-pointer" id="" />
-                            {item.options[1]}
+                          <input
+                            type="radio"
+                            name={"question" + index}
+                            className="cursor-pointer"
+                            id=""
+                          />
+                          {item.options[1]}
                         </p>
 
                         <p className="flex justify-start items-center gap-3 bg-white text-gray-700 p-2 rounded-md cursor-pointer">
-                            <input type="radio" name={"question"+index} className="cursor-pointer" id="" />
-                            {item.options[2]}
+                          <input
+                            type="radio"
+                            name={"question" + index}
+                            className="cursor-pointer"
+                            id=""
+                          />
+                          {item.options[2]}
                         </p>
 
                         <p className="flex justify-start items-center gap-3 bg-white text-gray-700 p-2 rounded-md cursor-pointer">
-                            <input type="radio" name={"question"+index} className="cursor-pointer" id="" />
-                            {item.options[3]}
+                          <input
+                            type="radio"
+                            name={"question" + index}
+                            className="cursor-pointer"
+                            id=""
+                          />
+                          {item.options[3]}
                         </p>
                       </div>
                     );
@@ -159,15 +190,15 @@ const LearningWindow = () => {
                   <ChevronLeft className="w-5 h-5" />
                   Previous
                 </button> */}
-                {
-                    !showReflection && (                  <button
-                        onClick={() => setShowReflection(true)}
-                        className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors flex items-center gap-2"
-                      >
-                        <PenTool className="w-5 h-5" />
-                        I'm Ready to Reflect!
-                      </button>)
-                }
+                {!showReflection && (
+                  <button
+                    onClick={() => setShowReflection(true)}
+                    className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors flex items-center gap-2"
+                  >
+                    <PenTool className="w-5 h-5" />
+                    I'm Ready to Reflect!
+                  </button>
+                )}
 
                 {showReflection && (
                   <button
