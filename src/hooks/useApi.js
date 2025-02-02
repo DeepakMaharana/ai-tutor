@@ -1,6 +1,6 @@
 // src/hooks/useApi.js
 import { useState, useCallback } from 'react';
-import api from '../services/api/api'; // Import the axios instance
+import api from '../api/api'; // Import the axios instance
 
 // Custom hook for GET requests
 export const useFetch = () => {
