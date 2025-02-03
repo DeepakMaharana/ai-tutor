@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Dialog } from 'primereact/dialog';
 import SignInUp from "./SignInUp";
 import ChatInterface from "./ChatInterface";
+import { useApiKey } from "../hooks/useApi";
 
 const BottomNavigationModal = () => {
+    const [apiKey, setApiKey, clearApiKey] = useApiKey();
+  
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [visibleScreen, setVisibleScreen] = useState(0);
@@ -14,6 +17,14 @@ const BottomNavigationModal = () => {
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(()=>{
+    if(!apiKey)
+      {
+        setVisible(true);
+        setVisibleScreen(1);
+      } 
+  },[])
 
   return (
     <div>

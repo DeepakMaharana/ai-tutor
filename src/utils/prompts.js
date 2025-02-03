@@ -16,12 +16,12 @@ const prompt_data = {
               "A video game.",
               "A robot.",
             ],
-            answer: "A programming language.",
+            correctAnswer: "A programming language.",
           },
           {
             question: "What symbol is used to write a comment in Python?",
             options: ["#", "//", "/* */", "--"],
-            answer: "#",
+            correctAnswer: "#",
           },
           {
             question: "Which animal does Python's name come from?",
@@ -31,7 +31,7 @@ const prompt_data = {
               "A cobra.",
               "A dragon.",
             ],
-            answer: "Monty Python (a comedy group).",
+            correctAnswer: "Monty Python (a comedy group).",
           },
           {
             question: "How do you print text in Python?",
@@ -41,12 +41,12 @@ const prompt_data = {
               "say 'Hello'",
               "display('Hello')",
             ],
-            answer: "print('Hello')",
+            correctAnswer: "print('Hello')",
           },
           {
             question: "Is Python a programming language or a type of snake?",
             options: ["Programming language", "Snake", "Both", "Neither"],
-            answer: "Both",
+            correctAnswer: "Both",
           },
         ],
       },
@@ -67,12 +67,12 @@ const prompt_data = {
               "A computer part.",
               "An error in code.",
             ],
-            answer: "A box that stores information.",
+            correctAnswer: "A box that stores information.",
           },
           {
             question: "Which symbol is used to assign a value to a variable?",
             options: ["=", "==", "->", "<-"],
-            answer: "=",
+            correctAnswer: "=",
           },
           {
             question: "What are the three basic data types in Python?",
@@ -82,17 +82,17 @@ const prompt_data = {
               "Cars, Bikes, and Trains.",
               "Books, Pens, and Papers.",
             ],
-            answer: "Numbers, Text, and True/False.",
+            correctAnswer: "Numbers, Text, and True/False.",
           },
           {
             question: "Can you change the value of a variable?",
             options: ["Yes!", "No", "Sometimes", "Only in special cases"],
-            answer: "Yes!",
+            correctAnswer: "Yes!",
           },
           {
             question: "What will this print? name = 'Alice'; print(name)",
             options: ["Alice", "name", "print(name)", "Error"],
-            answer: "Alice",
+            correctAnswer: "Alice",
           },
         ],
       },
@@ -113,7 +113,7 @@ const prompt_data = {
               "A math operation.",
               "A computer virus.",
             ],
-            answer: "A way to repeat tasks.",
+            correctAnswer: "A way to repeat tasks.",
           },
           {
             question: "What does a 'for' loop do?",
@@ -123,7 +123,7 @@ const prompt_data = {
               "Pauses the program.",
               "Ends the program.",
             ],
-            answer: "Repeats a task a set number of times.",
+            correctAnswer: "Repeats a task a set number of times.",
           },
           {
             question: "What is the correct syntax for a 'for' loop?",
@@ -133,13 +133,13 @@ const prompt_data = {
               "repeat x until 5",
               "loop(x, 5)",
             ],
-            answer: "for x in range(5):",
+            correctAnswer: "for x in range(5):",
           },
           {
             question:
               "What is the output of this code: for i in range(3): print(i)",
             options: ["0 1 2", "1 2 3", "3 2 1", "Error"],
-            answer: "0 1 2",
+            correctAnswer: "0 1 2",
           },
           {
             question: "What is a 'while' loop used for?",
@@ -149,7 +149,7 @@ const prompt_data = {
               "Checks if a number is even.",
               "Stops the program.",
             ],
-            answer: "Repeats as long as a condition is true.",
+            correctAnswer: "Repeats as long as a condition is true.",
           },
         ],
       },
@@ -170,24 +170,24 @@ const prompt_data = {
               "To define a variable.",
               "To stop the program.",
             ],
-            answer: "To check if something is true.",
+            correctAnswer: "To check if something is true.",
           },
           {
             question:
               "Which statement is used for alternate actions in Python?",
             options: ["else", "if", "for", "while"],
-            answer: "else",
+            correctAnswer: "else",
           },
           {
             question: "What does 'elif' mean in Python?",
             options: ["Else if", "Else output", "Error", "End if"],
-            answer: "Else if",
+            correctAnswer: "Else if",
           },
           {
             question:
               "What will this code output? if 5 > 3: print('Yes') else: print('No')",
             options: ["Yes", "No", "Error", "Nothing"],
-            answer: "Yes",
+            correctAnswer: "Yes",
           },
           {
             question:
@@ -198,7 +198,7 @@ const prompt_data = {
               "An error occurs.",
               "The loop repeats.",
             ],
-            answer: "The 'else' part runs.",
+            correctAnswer: "The 'else' part runs.",
           },
         ],
       },
@@ -219,7 +219,7 @@ const prompt_data = {
               "A loop that repeats.",
               "A data type.",
             ],
-            answer: "A set of instructions to perform a task.",
+            correctAnswer: "A set of instructions to perform a task.",
           },
           {
             question: "How do you define a function in Python?",
@@ -229,13 +229,13 @@ const prompt_data = {
               "define function_name:",
               "func function_name():",
             ],
-            answer: "def function_name():",
+            correctAnswer: "def function_name():",
           },
           {
             question:
               "What is the output of this code? def greet(): print('Hello!'); greet()",
             options: ["Hello!", "greet", "Error", "Nothing"],
-            answer: "Hello!",
+            correctAnswer: "Hello!",
           },
           {
             question: "What is a return statement used for in a function?",
@@ -245,12 +245,12 @@ const prompt_data = {
               "To repeat the function.",
               "To print a message.",
             ],
-            answer: "To send a value back to the caller.",
+            correctAnswer: "To send a value back to the caller.",
           },
           {
             question: "Can a function return more than one value?",
             options: ["Yes", "No", "Sometimes", "Only in certain cases"],
-            answer: "Yes",
+            correctAnswer: "Yes",
           },
         ],
       },
