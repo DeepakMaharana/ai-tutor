@@ -8,13 +8,13 @@ import {
   PenTool,
 } from "lucide-react";
 import prompt_data from "../utils/prompts";
-import { useFetch, usePost } from "../hooks/useApi";
+// import { useFetch, usePost } from "../hooks/useApi";
 
 // Sample topics data - in a real app, this would come from a backend
 const topics = prompt_data["topics"];
 
 const LearningWindow = () => {
-  const { loading, error, postData } = usePost();
+//   const { loading, error, postData } = usePost();
   const [currentTopic, setCurrentTopic] = useState(0);
   const [unlockedTopics, setUnlockedTopics] = useState([0]);
   const [reflection, setReflection] = useState("");
@@ -45,9 +45,9 @@ const LearningWindow = () => {
       let data = {
         contents: [{ parts: [{ text: topics.ai_prompt }] }],
       };
-      const response = postData(url, data);
+    //   const response = postData(url, data);
 
-      console.log(response);
+    //   console.log(response);
     }
   };
 
@@ -66,7 +66,7 @@ const LearningWindow = () => {
             <div className="space-y-2">
               {topics.map((topic, index) => (
                 <button
-                  key={topic.id}
+                  key={index}
                   onClick={() => handleTopicClick(index)}
                   className={`w-full text-left p-3 rounded-lg flex items-center gap-2 transition-all ${
                     unlockedTopics.includes(index)
@@ -97,10 +97,10 @@ const LearningWindow = () => {
               {!showReflection ? (
                 <div className="flex-grow">
                   <p className="text-lg mb-6">
-                    {loading && "Generating Data"}
+                    {/* {loading && "Generating Data"}
 
                     {error &&
-                      "Something went wrong! error while generating response"}
+                      "Something went wrong! error while generating response"} */}
                     {topics[currentTopic].content &&
                       topics[currentTopic].content}
                   </p>

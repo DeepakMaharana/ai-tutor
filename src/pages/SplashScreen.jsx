@@ -8,7 +8,7 @@ const SplashScreen = () => {
 
   const leftPetals = ["l1", "l2", "l3"];
   const rightPetals = ["r1", "r2", "r3"];
-  const brandName = "Welcome to AI Python Tutor";
+  const brandName = "Welcome to AI Tutor";
   const closeAngles = {
     l1: 11,
     l2: 18,
@@ -95,7 +95,7 @@ const SplashScreen = () => {
 
   return (
     <div
-      className="flex flex-col justify-center items-center w-full h-full splash-container absolute top-0 left-0 z-30 bg-zinc-900 "
+      className="flex flex-col justify-center items-center w-full h-full splash-container absolute top-0 left-0 z-30 bg-zinc-900 p-4"
       // style={{
       //   // background:
       //     // "linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #312E81 100%)",
@@ -191,7 +191,7 @@ const SplashScreen = () => {
 
       <h1
         ref={brandRef}
-        className="splash_brand_name ml-4 uppercase text-purple-400  font-bold text-4xl"
+        className="splash_brand_name uppercase text-purple-400  text-center font-bold text-4xl"
       >
         {
           brandName
@@ -200,9 +200,9 @@ const SplashScreen = () => {
 
       <h2
         ref={brandRef}
-        className="splash_brand_name ml-4 mt-6 w-[800px] text-center text-gray-400  text-sm  lg:text-sm"
+        className="splash_brand_name mt-6 md:w-[800px] text-center text-gray-400  text-sm  lg:text-sm"
       >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, distinctio maxime doloribus excepturi praesentium aperiam? Ducimus distinctio praesentium omnis nam?
+        AI Python Tutor for Kids is an interactive learning platform designed to teach the basics of Python through step-by-step lessons, engaging quizzes, and real-time AI assistance. Built using React, TailwindCSS, and Axios, the app ensures a smooth, responsive, and visually appealing experience. The AI chat panel, powered by GeminiAI's API, helps kids with their coding questions in real time. The approach focuses on a structured learning path, where lessons unlock only after quizzes, promoting gradual skill development. An easy-to-use settings panel allows users to configure their own API key for uninterrupted AI support. 🚀
       </h2>
 
       <button className="border-2 hover:border-purple-500 hover:bg-purple-500 text-white border-white px-6 py-2 mt-6" onClick={()=>gsap.to(".splash-container", {
