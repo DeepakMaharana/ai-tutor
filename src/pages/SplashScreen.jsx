@@ -200,7 +200,7 @@ const SplashScreen = () => {
 
       <h2
         ref={brandRef}
-        className="splash_brand_name mt-6 md:w-[800px] text-center text-gray-400  text-sm  lg:text-sm"
+        className="splash_brand_name mt-6 sm:w-[90%] md:w-[80%] text-center text-gray-400  text-sm  lg:text-sm"
       >
         AI Python Tutor for Kids is an interactive learning platform designed to teach the basics of Python through step-by-step lessons, engaging quizzes, and real-time AI assistance. Built using React, TailwindCSS, and Axios, the app ensures a smooth, responsive, and visually appealing experience. The AI chat panel, powered by GeminiAI's API, helps kids with their coding questions in real time. The approach focuses on a structured learning path, where lessons unlock only after quizzes, promoting gradual skill development. An easy-to-use settings panel allows users to configure their own API key for uninterrupted AI support. 🚀
       </h2>

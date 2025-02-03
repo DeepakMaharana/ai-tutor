@@ -3,9 +3,13 @@ import SplashScreen from "./pages/SplashScreen";
 import BottomNavigationModal from "./components/BottomNavigationModal";
 import LearningWindow from "./components/LearningWindow";
 
+// import "primereact/resources/themes/lara-light-cyan/theme.css";
+
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+        
 function App() {
   return (
-    <>
+    <PrimeReactProvider>
       <SplashScreen />
 
       {/* Responsive spheres */}
@@ -24,7 +28,7 @@ function App() {
 
 
 
-    </>
+    </PrimeReactProvider>
   );
 }
 

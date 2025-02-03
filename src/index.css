@@ -104,3 +104,32 @@ body {
       transform: translateY(150px) translateX(100px) rotate(-5deg);
   }
 }
+
+
+@media (max-width: 768px) {
+  .sphere:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      left: -50px;
+      top: -50px;
+  }
+  
+  .sphere:nth-child(2) {
+      width: 250px;
+      height: 250px;
+      right: -100px;
+      bottom: -100px;
+  }
+  
+  .sphere:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      left: 30%;
+      top: 40%;
+  }
+}
+
+.p-dialog-mask
+{
+  background-color: rgba(0, 0, 0, 0.8);
+}

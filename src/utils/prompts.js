@@ -3,7 +3,7 @@ const prompt_data = {
     {
       topic: "Introduction to Python",
       ai_prompt:
-        "Explain Python in a fun way for kids. Give an example of a simple Python program and explain what it does. Output format: plain text, clear and simple with step-by-step explanation.",
+        "Explain Python in a fun way for kids. Give an example of a simple Python program and explain what it does. Output format: html inside div, clear and simple with step-by-step explanation.",
       fun_fact:
         "Did you know? Python is named after a comedy group called Monty Python, not the snake! It’s because the creator of Python wanted the language to be fun and playful!",
       quiz: {
@@ -54,7 +54,7 @@ const prompt_data = {
     {
       topic: "Variables and Data Types",
       ai_prompt:
-        "Explain what variables are in Python like explaining to a kid with a toy box example. Show how to create a variable with an example. Output format: plain text, simple, with an example code snippet and explanation.",
+        "Explain what variables are in Python like explaining to a kid with a toy box example. Show how to create a variable with an example. Output format: html inside div, simple, with an example code snippet and explanation.",
       fun_fact:
         "Fun fact: In Python, you don’t need to tell the computer the type of the toy (variable) you’re storing. Python figures it out for you! It’s like a toy box that knows what toys you’re putting in.",
       quiz: {
@@ -100,7 +100,7 @@ const prompt_data = {
     {
       topic: "Loops in Python",
       ai_prompt:
-        "Explain loops in Python, especially the 'for' loop and 'while' loop, in a way a kid would understand. Show an example of each loop with simple code and output. Output format: plain text with clear explanations and sample code, followed by expected output.",
+        "Explain loops in Python, especially the 'for' loop and 'while' loop, in a way a kid would understand. Show an example of each loop with simple code and output. Output format: html inside div with clear explanations and sample code, followed by expected output.",
       fun_fact:
         "Fun fact: Python’s loops are like a magic repeat button! The 'for' loop helps you do something over and over, and the 'while' loop keeps repeating until you say stop.",
       quiz: {
@@ -157,7 +157,7 @@ const prompt_data = {
     {
       topic: "Conditionals in Python",
       ai_prompt:
-        "Explain 'if', 'else', and 'elif' statements using a real-world example. Show simple code with different conditions. Output format: plain text, with examples and expected output after each block of code.",
+        "Explain 'if', 'else', and 'elif' statements using a real-world example. Show simple code with different conditions. Output format: html inside div, with examples and expected output after each block of code.",
       fun_fact:
         "Fun fact: Conditionals are like having a 'choose your own adventure' book! The program makes choices based on the conditions you set!",
       quiz: {
@@ -206,7 +206,7 @@ const prompt_data = {
     {
       topic: "Functions in Python",
       ai_prompt:
-        "Explain what functions are in Python using a fun analogy like a recipe. Show how to create and use a function. Output format: plain text with a detailed explanation and code examples showing both function definition and calling.",
+        "Explain what functions are in Python using a fun analogy like a recipe. Show how to create and use a function. Output format: html inside div with a detailed explanation and code examples showing both function definition and calling.",
       fun_fact:
         "Did you know? Functions are like recipes! You can follow the same instructions (function) over and over to make the same dish (output). No need to start from scratch every time!",
       quiz: {

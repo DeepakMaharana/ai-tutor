@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function SignInUp() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    confirmPassword: '',
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
 
@@ -22,21 +22,21 @@ function SignInUp() {
     if (isSignUp) {
       // Signup validations
       if (!formData.email) {
-        newErrors.email = 'Email is required';
+        newErrors.email = "Email is required";
       }
       if (!formData.password) {
-        newErrors.password = 'Password is required';
+        newErrors.password = "Password is required";
       }
       if (formData.password !== formData.confirmPassword) {
-        newErrors.confirmPassword = 'Passwords do not match';
+        newErrors.confirmPassword = "Passwords do not match";
       }
     } else {
       // Login validations
       if (!formData.email) {
-        newErrors.email = 'Email is required';
+        newErrors.email = "Email is required";
       }
       if (!formData.password) {
-        newErrors.password = 'Password is required';
+        newErrors.password = "Password is required";
       }
     }
 
@@ -44,21 +44,28 @@ function SignInUp() {
       setErrors(newErrors);
     } else {
       // Clear form data
-      setFormData({ email: '', password: '', confirmPassword: '' });
+      setFormData({ email: "", password: "", confirmPassword: "" });
       // Reset errors
       setErrors({});
     }
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-100">
+    <div className="bg-gray-50">
+      <header className="bg-purple-500 border-b">
+        <div className="mx-auto px-4 py-3">
+          <h1 className="text-xl text-center font-bold">
+            {isSignUp ? "Sign Up" : "Sign In"}
+          </h1>
+        </div>
+      </header>
       <div className="bg-white p-8 rounded shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-4">
-          {isSignUp ? 'Sign Up' : 'Sign In'}
-        </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -119,13 +126,13 @@ function SignInUp() {
             type="submit"
             className="w-full bg-purple-500 hover:bg-purpel-700 text-white font-bold py-2 px-4 rounded"
           >
-            {isSignUp ? 'Sign Up' : 'Sign In'}
+            {isSignUp ? "Sign Up" : "Sign In"}
           </button>
         </form>
         <div className="mt-4 text-center">
           {isSignUp ? (
-            <p className='text-black'>
-              Already have an account?{' '}
+            <p className="text-black">
+              Already have an account?{" "}
               <span
                 className="text-purple-500 cursor-pointer"
                 onClick={() => setIsSignUp(false)}
@@ -134,8 +141,8 @@ function SignInUp() {
               </span>
             </p>
           ) : (
-            <p className='text-black'>
-              Don't have an account?{' '}
+            <p className="text-black">
+              Don't have an account?{" "}
               <span
                 className="text-purple-500 cursor-pointer"
                 onClick={() => setIsSignUp(true)}

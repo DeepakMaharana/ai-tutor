@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Dialog } from 'primereact/dialog';
 import SignInUp from "./SignInUp";
+import ChatInterface from "./ChatInterface";
 
 const BottomNavigationModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [visibleScreen, setVisibleScreen] = useState(0);
+
 
   // Toggle the modal open/close
   const toggleModal = () => {
@@ -14,9 +17,17 @@ const BottomNavigationModal = () => {
 
   return (
     <div>
-      <Dialog visible={visible} style={{ width: 'max-content', padding:"1rem", backgroundVColor:"#fff" }} onHide={() => {if (!visible) return; setVisible(false); }}>
-        <SignInUp/>
+      <Dialog visible={visible} style={{ width: 'max-content', padding:"1rem", backgroundVColor:"#dfdfdf" }} onHide={() => {if (!visible) return; setVisible(false); }}>
+        {
+          visibleScreen == 0 && <SignInUp/>
+        }
+
+        {
+          visibleScreen == 1 && <ChatInterface/>
+        }
+        
       </Dialog>
+
       {/* Fixed button at the bottom */}
       <div className="fixed bottom-20 right-10 z-20">
         <button
@@ -33,11 +44,8 @@ const BottomNavigationModal = () => {
           <div className="bg-white rounded-t-lg md:rounded-lg w-[300px] md:max-w-md p-6 shadow-lg">
             <h2 className="text-xl font-bold text-center text-[#7853df] p-2 border-b-2 border-[#7853df]">Menu</h2>
             <ul className="list-none p-2">
-                <li className="test-lg font-bold mb-2 text-white bg-purple-400 hover:bg-[#7853df] p-2 ">Home</li>
-                <li className="test-lg font-bold mb-2 text-white bg-purple-400 hover:bg-[#7853df] p-2 ">About</li>
-                <li className="test-lg font-bold mb-2 text-white bg-purple-400 hover:bg-[#7853df] p-2 ">Services</li>
-                <li className="test-lg font-bold mb-2 text-white bg-purple-400 hover:bg-[#7853df] p-2 ">Contact</li>
-                <li className="test-lg font-bold mb-2 text-white bg-purple-400 hover:bg-[#7853df] p-2 " onClick={() => setVisible(true)}> Sign-In / Sign Up</li>
+                <li className="test-lg font-bold mb-2 text-white bg-purple-500 hover:bg-purple-600 p-2 " onClick={() => { toggleModal(); setVisible(true); setVisibleScreen(1);}}>AI Chat</li>
+                {/* <li className="test-lg font-bold mb-2 text-white bg-purple-500 hover:bg-purple-600 p-2 " onClick={() => { toggleModal(); setVisible(true); setVisibleScreen(0)}}> Sign-In / Sign Up</li> */}
             </ul>
           </div>
         </div>
