@@ -19,6 +19,8 @@ const topics = prompt_data["topics"];
 const LearningWindow = () => {
   //   const { loading, error, postData } = usePost();
   const [currentTopic, setCurrentTopic] = useState(0);
+  const [currentTopicContent, setCurrentTopicContent] = useState("");
+
 
   const [unlockedTopics, setUnlockedTopics] = useState([0]);
   const [reflection, setReflection] = useState(false);
@@ -31,7 +33,7 @@ const LearningWindow = () => {
       setCurrentTopic(currentTopic + 1);
       setReflection("");
       setShowReflection(false);
-
+      setCurrentTopicContent("");
       try {
         const response = await axios({
           url:
@@ -50,6 +52,8 @@ const LearningWindow = () => {
             .replaceAll("```", "")
             .replace("html", "");
         topics[currentTopic + 1].content = responseText;
+        setCurrentTopicContent(responseText)
+
       } catch (err) {
         console.log(err);
       }
@@ -80,6 +84,12 @@ const LearningWindow = () => {
               .replace("html", "");
           console.log(responseText);
           topics[index].content = responseText;
+          setCurrentTopicContent(responseText)
+
+        }
+        else
+        {
+            setCurrentTopicContent(topics[index].content)
         }
       } catch (err) {
         console.log(err);
@@ -111,7 +121,7 @@ const LearningWindow = () => {
                       ? "hover:bg-purple-600 cursor-pointer"
                       : "opacity-50 cursor-not-allowed"
                   } ${
-                    currentTopic === index ? "bg-purple-500" : "bg-gray-400"
+                    currentTopic === index ? "bg-purple-600" : "bg-gray-700"
                   }`}
                 >
                   {unlockedTopics.includes(index) ? (
@@ -136,7 +146,7 @@ const LearningWindow = () => {
                 <div className="flex-grow">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: topics[currentTopic].content,
+                      __html: currentTopicContent,
                     }}
                     className="mb-4 fond-bold"
                   />
